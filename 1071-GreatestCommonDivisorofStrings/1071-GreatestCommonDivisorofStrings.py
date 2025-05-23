@@ -1,17 +1,12 @@
-# Last updated: 5/23/2025, 1:06:25 AM
+# Last updated: 5/23/2025, 1:34:30 AM
 class Solution:
-    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
-        max = 0
-        result = []
-
-        for candy in candies:
-           if candy > max:
-            max = candy
-
-        for candy in candies:
-            result.append(True if candy + extraCandies >= max else False)
-
+    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+        for i in range(len(flowerbed)):
+            if flowerbed[i] == 0:
+                leftEmpty = (i == 0) or flowerbed[i - 1] == 0
+                rightEmpty = (i == len(flowerbed) - 1) or flowerbed[i + 1] == 0
+                if leftEmpty and rightEmpty:
+                    flowerbed[i] = 1
+                    n -= 1
         
-        return result
-
-
+        return n <= 0
