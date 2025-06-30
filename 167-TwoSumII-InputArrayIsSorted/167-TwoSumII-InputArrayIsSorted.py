@@ -1,4 +1,4 @@
-# Last updated: 6/19/2025, 11:00:29 PM
+# Last updated: 6/29/2025, 9:38:05 PM
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         start = 0
@@ -13,4 +13,4 @@ class Solution:
             else:
                 end -= 1
         
-        return [-1, -1]
+        return []
